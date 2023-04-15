@@ -10,22 +10,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    <header class="header">
-        <a class="logo-container" href="index.php"><img src="images/Angelos.png" alt="logo" class="logo"></a>
+<body id="ov">
+<header class=".resize-animation-stopper">
+		<a href="index.php"><img src="images/Angelos.png" alt="logo" class="logo"></a>
 
-        <nav>
-            <ul class="navbar">
-                <li><a id="nav1" href="index.php">Home</a></li>
-                <li><a id="nav2" href="men.php">Men</a></li>
-                <li><a id="nav3" href="women.php">Women</a></li>
-                <li><a id="nav4" class="active" href="#">Contact</a></li>
-                <li><a id="nav5" href="account.php">Account</a></li>
-                <li id="nav6" class="icon"><a href="#"><i class='bx bx-shopping-bag'></i></a></li>
-            </ul>
-        </nav>
+		<button class="mobile-toggle" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+			<svg width="100" height="100" viewBox="0 0 100 100">
+			  <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+			  <path class="line line2" d="M 20,50 H 80" />
+			  <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+			</svg>
+		  </button>
 
-    </header>
+		<nav>
+			<ul class="navbar" id="navbar" data-visible="false">
+				<li><a id="nav1"  href="index.php">Home</a></li>
+				<li><a id="nav2" href="men.php">Men</a></li>
+				<li><a id="nav3" href="women.php">Women</a></li>
+				<li><a id="nav4" class="active" href="contact.php">Contact</a></li>
+				<li><a id="nav5" href="account.php">Account</a></li>
+				<li id="nav6" class="icon"><a href="#"><i class='bx bx-shopping-bag'></i></a></li>
+			</ul>
+
+		</nav>
+
+	</header>
 
     <section class="contact-us" style="background-image: url(images/contact-bg.png);">
         <div class="con-text">
@@ -46,7 +55,7 @@
 
             <div class="con-info">
                 <p><i class="fa-solid fa-phone icon"></i>+09123456789</p>
-                <p><i class="fa-solid fa-envelope icon"></i>nielangelo@gmail.com</p>
+                <p><i class="fa-solid fa-envelope icon"></i>nagencaya23@gmail.com</p>
                 <p><i class="fa-solid fa-location-dot icon"></i>Kabankalan City</p>
             </div>
 
@@ -86,31 +95,46 @@
                 </div>
 
                 <div class="message">
-                    <textarea placeholder="Your Message Here..." name="msg" required></textarea>
+                    <textarea placeholder="Your Message Here..." name="message" required></textarea>
                 </div>
 
                 <div class="button">
-                    <input type="submit" value="Send Message" name="submit">
+                    <input type="submit" value="Send Message" name="send">
                 </div>
 
             </form>
 
             <?php
-            
-            ini_set("smtp_port", "587");
-            ini_set("sendmail_from", "nielangelo.gencaya.s@southlandcollege.edu.ph");
 
-            if (isset($_POST["submit"])) {
+            use PHPMailer\PHPMailer\PHPMailer;
+            use PHPMailer\PHPMailer\Exception;
+
+            require "C:/composer/vendor/autoload.php";
+
+            if (isset($_POST["send"])) {
+
+                $mail = new PHPMailer(true);
+
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'nagencaya23@gmail.com'; // Gmail Account
+                $mail->Password = 'rxcfbhhfrpenjgyv'; // Gmaill APP Password
+                $mail->SMTPSecure = 'ssl';
+                $mail->Port = 465;
+                $mail->setFrom('nagencaya23@gmail.com'); // Gmail Account must be the same above
+                $mail->addAddress($_POST["email"]);
+                $mail->isHTML(true);
+                $mail->Subject = "Angelos Shoes Store - Authentic Street Wear";
 
                 $fname = $_POST["fname"];
                 $lname = $_POST["lname"];
-                $email = $_POST["email"];
                 $phone = $_POST["phone"];
-                $msg = $_POST["msg"];
 
-                $message = $msg . "\n\nFrom $fname $lname";
+                $mail->Body = $_POST["message"] . "<br><br><br>From: $fname $lname <br>Phone #: $phone";
 
-                mail($email, "Angelos Contact Us", $message);
+                $mail->send();
+
             }
             ?>
 
@@ -169,7 +193,7 @@
         </div>
 
     </section>
-
+	<script src="./script/nav.js"></script>
 </body>
 
 </html>
