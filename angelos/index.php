@@ -3,6 +3,7 @@
 
 <head>
 	<title>Angelos</title>
+	<link rel="icon" href="images/Angelos.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/design.css" rel="stylesheet">
@@ -211,7 +212,7 @@
 		</div>
 
 	</section>
-	<script src="./main.js"></script>
+	<script src="./script/nav.js"></script>
 </body>
 
 </html>

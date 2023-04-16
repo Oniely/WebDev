@@ -3,13 +3,14 @@
 
 <head>
     <title>Angelos</title>
+	<link rel="icon" href="images/Angelos.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/design.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
-<body>
+<body id="ov">
 <header class=".resize-animation-stopper">
 		<a href="index.php"><img src="images/Angelos.png" alt="logo" class="logo"></a>
 
@@ -313,7 +314,7 @@
         </div>
 
     </section>
-	<script src="./main.js"></script>
+	<script src="./script/nav.js"></script>
 </body>
 
 </html>

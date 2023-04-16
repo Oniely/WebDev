@@ -10,6 +10,7 @@ session_start();
 
 <head>
 	<title>Angelos</title>
+	<link rel="icon" href="images/Angelos.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/login.css" rel="stylesheet">
@@ -76,7 +77,12 @@ session_start();
 				$conn = new mysqli($servername, $username, $password, $database);
 
 				if ($conn->connect_error) {
-					die("Connection failed: $conn->connect_error");
+					echo '
+					<script>
+
+					document.getElementById("warning").innerHTML = "Connection Failed: Failed to Connect! ";
+
+					</script>';
 				}
 
 				$sql = "SELECT * FROM account_tbl WHERE user='$user' AND pass='$pass'";
@@ -114,7 +120,6 @@ session_start();
 		</div>
 
 	</section>
-	<script src="main.js"></script>
 </body>
 
 </html>

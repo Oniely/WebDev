@@ -3,6 +3,7 @@
 
 <head>
 	<title>Angelos</title>
+	<link rel="icon" href="images/Angelos.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/login.css" rel="stylesheet">
@@ -365,7 +366,12 @@
 				$conn = new mysqli($servername, $username, $password, $database);
 
 				if ($conn->connect_error) {
-					die("Connection failed: $conn->connect_error");
+					echo '
+					<script>
+
+					document.getElementById("warning").innerHTML = "Connection Failed: Failed to Connect! ";
+
+					</script>';
 				}
 
 				$regUser = $_POST["regUser"];
@@ -411,7 +417,7 @@
 		</div>
 
 	</section>
-	<script src="./main.js"></script>
+	<script src="./script/register.js"></script>
 </body>
 
 </html>
