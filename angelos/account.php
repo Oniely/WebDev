@@ -32,7 +32,7 @@ session_start();
 
 		<nav>
 			<ul class="navbar" id="navbar" data-visible="false">
-				<li><a id="nav1"  href="index.php">Home</a></li>
+				<li><a id="nav1"  href="home.php">Home</a></li>
 				<li><a id="nav2" href="men.php">Men</a></li>
 				<li><a id="nav3" href="women.php">Women</a></li>
 				<li><a id="nav4" href="contact.php">Contact</a></li>

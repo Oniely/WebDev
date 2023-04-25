@@ -46,7 +46,7 @@
 							<input type="password" value="" name="regPass" class="input" id="regPass" placeholder="Password" required>
 						</div>
 					</div>
-					<a href="login.php" class="signIn">Already have an account?</a>
+					<a href="index.php" class="signIn">Already have an account?</a>
 					<button type="button" class="logBtn" id="nextBtn">Next</button>
 
 					<p id="warning2"></p>
