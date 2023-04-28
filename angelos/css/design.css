@@ -434,7 +434,7 @@ header .logo {
 .footer {
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 80vh;
     background-color: #27201A;
 }
 
@@ -442,11 +442,11 @@ header .logo {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 	width: 100%;
-    height: 35vh;
+    height: 40vh;
     color: white;
     background-color: #27201A;
     align-items: center;
-    padding: 0 60px;
+    padding: 0 80px;
 	overflow: hidden;
 }
 
@@ -460,8 +460,7 @@ header .logo {
 	flex-direction: column;
     text-decoration: none;
 	align-items: flex-start;
-	width: auto;
-	height: 100%;
+	height: 70%;
 }
 
 .f3 {
@@ -470,7 +469,7 @@ header .logo {
 	padding: 15px;
 	justify-content: flex-end;
 	align-items: flex-start;
-	height: 80%;
+	height:70%;
 }
 
 .f-links {
