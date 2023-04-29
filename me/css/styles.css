@@ -7,6 +7,7 @@
 	font-family: 'Montserrat', sans-serif;
 	list-style: none;
 	text-decoration: none;
+	scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -19,7 +20,7 @@ header {
 	justify-content: space-between;
 	width: 100%;
 	min-height: 100vh;
-	background-color: #333;
+	background-color: #9CA0A1;
 	position: relative;
 	z-index: 1;
 	
@@ -61,7 +62,7 @@ nav {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	gap: 50px;
+	gap: 40px;
 }
 
 .nav-links li {
@@ -90,49 +91,43 @@ nav {
 		z-index: 1000;
 		flex-direction: column;
 		justify-content: start;
-		padding: min(30vh, 10rem) 2em;
+		padding: min(30vh, 10rem) 1.5em;
 		align-items: start;
 		background: rgba(0,0,0,0.2);
 		margin-top: -60px;
-		gap: 2em;
+		gap: 1rem;
 		backdrop-filter: blur(1rem);
 		transition: transform 350ms ease-out;
 		transform: translateX(100%);
-		
+		flex-direction: column;
+		flex-wrap: nowrap;
 	}
 	
 	.nav-links li a {
-		font-size: 2.5rem;
+		font-size: 8vw;
 	}
 
 	.nav-links[data-visible="true"] {
-		
 		transform: translateX(0%);
 	}
 	
 	.burger {
-		display: block;
-		position: absolute;
+		display: flex;
+		position: fixed;
 		z-index: 9999;
 		border: 0;
 		width: 2.5rem;
 		aspect-ratio: 1;
-		top: 1.7rem;
-		right: 2rem;
+		top: 1.2rem;
+		right: 2.2rem;
 		font-size: 0;
 		cursor: pointer;
-	}
-	
-	.burger {
-		background: #333;
-		padding: 0 5px;
 		border-radius: 50%;
-		border: none;
-		cursor: pointer;
-		display: flex;
-		transform: scale(1.2);
-	  }
-	
+		padding: 0 5px;
+		background: #333;
+		transform: scale(1.1);
+	}
+
 	svg {
 		height: 40px;
 		aspect-ratio: 1;
@@ -217,8 +212,9 @@ nav {
 
 .role h3 {
 	color: #f5f5f5;
-	font-size: 2.5vw;
+	font-size: 2vw;
 	font-weight: 500;
+	line-height: 2rem;
 }
 
 .bigname-btm {

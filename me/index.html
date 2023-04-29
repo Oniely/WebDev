@@ -1,81 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/styles.css">
-	<title>Niel Angelo Gencaya</title>
-</head>
-<body>
-	
-	<header class=".resize-animation-stopper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Niel Angelo Gencaya</title>
+  </head>
+  <body>
+    <header class=".resize-animation-stopper">
+      <nav>
+        <div class="credits-top">
+          <a href="#">
+            <span>&copy;</span>
+            <p>Oniely</p>
+          </a>
+        </div>
 
-		<nav>
-			<div class="credits-top">
-				<a href="#">
-					<span>&copy;</span>
-					<p>Oniely</p>
-				</a>
-			</div>
+        <ul class="nav-links" data-visible="false">
+          <li><a href="#">Work</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
 
-			<ul class="nav-links" data-visible="false">
-				<li><a href="#">Work</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+        <button
+          class="burger"
+          onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+          aria-label="Main Menu"
+        >
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <path
+              class="line line1"
+              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+            />
+            <path class="line line2" d="M 20,50 H 80" />
+            <path
+              class="line line3"
+              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+            />
+          </svg>
+        </button>
+      </nav>
 
-			<button class="burger" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
-				<svg width="100" height="100" viewBox="0 0 100 100">
-				  <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-				  <path class="line line2" d="M 20,50 H 80" />
-				  <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-				</svg>
-			  </button>
+      <div class="center">
+        <div class="logo"><img src="./images/WUI-white.png" alt="WUI" /></div>
 
-		</nav>
+        <div class="role">
+          <span>
+            <svg
+              width="14px"
+              height="14px"
+              viewBox="0 0 14 14"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <title>arrow-up-right</title>
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g
+                  id="Artboard"
+                  transform="translate(-1019.000000, -279.000000)"
+                  stroke="#FFFFFF"
+                  stroke-width="1.5"
+                >
+                  <g
+                    id="arrow-up-right"
+                    transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)"
+                  >
+                    <polyline
+                      id="Path"
+                      points="2.76923077 0 12 0 12 9.23076923"
+                    ></polyline>
+                    <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </span>
+          <h3>IT Student</h3>
+          <h3>Designer & Developer</h3>
+        </div>
+      </div>
 
-		<div class="center">
-			
-			<div class="logo"
-				><img src="./images/WUI-white.png" alt="WUI">
-			</div>
-			
-			<div class="role">
-				<span>
-					<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<title>arrow-up-right</title>
-					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						<g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#FFFFFF" stroke-width="1.5">
-							<g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
-								<polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
-								<line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
-							</g>
-						</g>
-					</g>
-					</svg>
-				</span>
-				<h3>IT Student</h3>
-				<h3>Designer & Developer</h3>
-			</div>
+      <div class="bigname-btm">
+        <h1>Niel Angelo Gencaya</h1>
+      </div>
 
-		</div>
+      <div class="img-container">
+        <img src="./images/oniel.png" alt="hero" />
+      </div>
+    </header>
 
+    <section></section>
 
-		<div class="bigname-btm">
-			<h1>Niel Angelo Gencaya</h1>
-		</div>
-
-		<div class="img-container">
-			<img src="./images/oniel.png" alt="hero">
-		</div>
-		
-	</header>
-
-	<section>
-
-	</section>
-
-	<script src="./script/nav.js"></script>
-</body>
+    <script src="./script/nav.js"></script>
+  </body>
 </html>
