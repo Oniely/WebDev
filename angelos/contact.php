@@ -81,62 +81,31 @@
 				<div class="form-details">
 
 					<div class="input-box">
-						<input type="text" placeholder="First Name" name="fname" required>
+						<input class="fname" id="fname" type="text" placeholder="First Name" name="fname" required>
 					</div>
 					<div class="input-box">
-						<input type="text" placeholder="Last Name" name="lname" required>
+						<input class="lname" id="lname" type="text" placeholder="Last Name" name="lname" required>
 					</div>
 					<div class="input-box">
-						<input type="text" placeholder="Email Address" name="email" required>
+						<input class="email" id="email" type="text" placeholder="Email Address" name="email" required>
 					</div>
 					<div class="input-box">
-						<input type="text" placeholder="Phone No." name="phone" required>
+						<input class="phone" id="phone" type="text" placeholder="Phone No." name="phone" required>
 					</div>
 
 				</div>
 
 				<div class="message">
-					<textarea placeholder="Your Message Here..." name="message" required></textarea>
+					<textarea class="msg" id="msg" placeholder="Your Message Here..." name="message" required></textarea>
 				</div>
 
 				<div class="button">
-					<input type="submit" value="Send Message" name="send">
+					<input class="btn" type="submit" value="Send Message" name="send" onclick="sendEmail(event)">
 				</div>
 
 			</form>
 
-			<?php
 
-			require "C:/composer/vendor/autoload.php";
-
-			use PHPMailer\PHPMailer\PHPMailer;
-			use PHPMailer\PHPMailer\Exception;
-
-			if (isset($_POST["send"])) {
-
-				$mail = new PHPMailer(true);
-
-				$mail->isSMTP();
-				$mail->Host = 'smtp.gmail.com';
-				$mail->SMTPAuth = true;
-				$mail->Username = 'nagencaya23@gmail.com'; // Gmail Account
-				$mail->Password = 'rxcfbhhfrpenjgyv'; // Gmaill APP Password
-				$mail->SMTPSecure = 'ssl';
-				$mail->Port = 465;
-				$mail->setFrom('nagencaya23@gmail.com'); // Gmail Account must be the same above
-				$mail->addAddress($_POST["email"]);
-				$mail->isHTML(true);
-				$mail->Subject = "Angelos Shoes Store - Authentic Street Wear";
-
-				$fname = $_POST["fname"];
-				$lname = $_POST["lname"];
-				$phone = $_POST["phone"];
-
-				$mail->Body = $_POST["message"] . "<br><br><br>From: $fname $lname <br>Phone #: $phone";
-
-				$mail->send();
-			}
-			?>
 
 
 		</div>
@@ -194,6 +163,31 @@
 
 	</section>
 	<script src="./script/nav.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		function sendEmail(e) {
+
+			e.preventDefault();
+
+			const email = document.getElementById('email').value;
+
+			const msg = document.getElementById('msg').value;
+
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username: "onielgencaya@gmail.com",
+				Password: "CBFD2D14A80DAD3DC28B24C448BCDC7F5026",
+				To: email,
+				From: "onielgencaya@gmail.com",
+				Subject: "Contact - Angelos",
+				Body: msg
+			}).then(
+				message => alert(message)
+			);
+
+			return true;
+		}
+	</script>
 </body>
 
 </html>
