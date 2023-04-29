@@ -1,0 +1,258 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	list-style: none;
+	text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #333;
+	position: relative;
+	z-index: 1;
+	
+}
+
+nav {
+	width: 100%;
+	height: 4.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 3rem;
+	z-index: 10;
+}
+
+.credits-top {
+	display: flex;
+	justify-self: center;
+	align-items: center;
+}
+
+.credits-top a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #f5f5f5;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.credits-top a span {
+	font-size: 18px;
+	padding: 0 5px;
+	font-weight: 600;
+}
+
+.nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+}
+
+.nav-links li {
+	text-align: center;
+}
+
+.nav-links li a {
+	color: #f5f5f5;
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.burger {
+	display: none;
+}
+
+.resize-animation-stopper * {
+	animation: none !important;
+	transition: none !important;
+}
+
+@media only screen and (max-width: 600px){
+	.nav-links {
+		position: fixed;
+		inset: 0 0 0 40%;
+		z-index: 1000;
+		flex-direction: column;
+		justify-content: start;
+		padding: min(30vh, 10rem) 2em;
+		align-items: start;
+		background: rgba(0,0,0,0.2);
+		margin-top: -60px;
+		gap: 2em;
+		backdrop-filter: blur(1rem);
+		transition: transform 350ms ease-out;
+		transform: translateX(100%);
+		
+	}
+	
+	.nav-links li a {
+		font-size: 2.5rem;
+	}
+
+	.nav-links[data-visible="true"] {
+		
+		transform: translateX(0%);
+	}
+	
+	.burger {
+		display: block;
+		position: absolute;
+		z-index: 9999;
+		border: 0;
+		width: 2.5rem;
+		aspect-ratio: 1;
+		top: 1.7rem;
+		right: 2rem;
+		font-size: 0;
+		cursor: pointer;
+	}
+	
+	.burger {
+		background: #333;
+		padding: 0 5px;
+		border-radius: 50%;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		transform: scale(1.2);
+	  }
+	
+	svg {
+		height: 40px;
+		aspect-ratio: 1;
+	  }
+	
+	.line {
+		fill: none;
+		stroke: #f5f5f5;
+		stroke-width: 6;
+		transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+		  stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+	  }
+	.line1 {
+		stroke-dasharray: 60 207;
+		stroke-width: 6;
+	  }
+	.line2 {
+		stroke-dasharray: 60 60;
+		stroke-width: 6;
+	  }
+	.line3 {
+		stroke-dasharray: 60 207;
+		stroke-width: 6;
+	  }
+	.opened .line1 {
+		stroke-dasharray: 90 207;
+		stroke-dashoffset: -134;
+		stroke-width: 6;
+	  }
+	.opened .line2 {
+		stroke-dasharray: 1 60;
+		stroke-dashoffset: -30;
+		stroke-width: 6;
+	  }
+	.opened .line3 {
+		stroke-dasharray: 90 207;
+		stroke-dashoffset: -134;
+		stroke-width: 6;
+	  }	
+}
+
+
+
+.center {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.center .logo {
+	color: #f5f5f5;
+	width: 20vw;
+	margin: 0 0 0 5vw;
+}
+
+.center .logo img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.center .role {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 0 5vw 0 0;
+	position: relative;
+}
+
+.role span {
+	width: fit-content;
+	position: absolute;
+	top: -40px;
+	left: 0;
+	margin: 0 auto;
+	padding: 3px;
+	transform: scale(1.5vw);
+}
+
+
+.role h3 {
+	color: #f5f5f5;
+	font-size: 2.5vw;
+	font-weight: 500;
+}
+
+.bigname-btm {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 0 5px 0;
+}
+
+.bigname-btm h1 {
+	color: #f5f5f5;
+	font-size: 9vw;
+	font-weight: 600;
+	text-align: center;
+}
+
+.img-container {
+	width: 35%;
+	height: 90%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: -1;
+}
+
+.img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+section {
+	height: 100vh;
+}
