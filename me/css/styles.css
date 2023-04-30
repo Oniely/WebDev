@@ -19,15 +19,6 @@
     display: none;
 }
 
-main {
-	scroll-snap-type: y proximity;
-	overflow-y: scroll;
-}
-
-header, section {
-	scroll-snap-align: start;
-}
-
 header {
 	display: flex;
 	flex-direction: column;
@@ -371,7 +362,7 @@ span {
 .about-header h1,
 .about-header h1 span {
 	font-family: 'Ibarra Real Nova', sans-serif;
-	font-size: 4rem;
+	font-size: clamp(2.5rem, 6vw, 4rem);
 	font-style: italic;
 	font-weight: 900;
 	color: var(--dark-color);
@@ -393,13 +384,15 @@ span {
 
 .about-header::after {
 	content: "";
-	width: 100%;
+	width: 100rem;
 	height: 1px;
 	background: var(--dark-color);
 	position: absolute;
 	top: 50%;
-	left: 12rem;
+	left: clamp(7rem, 17vw, 12rem);
 }
+
+
 
 @media only screen and (max-width: 1000px) {
 
