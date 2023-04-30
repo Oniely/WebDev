@@ -13,19 +13,11 @@
 	--secondary-color: #394867;
 	--dark-color: #212A3E;
 	--gray-color: #9BA4B5;
+	--dirt-white: #ECE7E1;
 }
 
 ::-webkit-scrollbar {
     display: none;
-}
-
-main {
-	scroll-snap-type: y proximity;
-	overflow-y: scroll;
-}
-
-header, section {
-	scroll-snap-align: start;
 }
 
 header {
@@ -36,7 +28,7 @@ header {
 	min-height: 100vh;
 	background-color: var(--secondary-color);
 	position: relative;
-	z-index: 1;	
+	z-index: 999;	
 }
 
 nav {
@@ -200,6 +192,7 @@ span {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	z-index: 99;
 }
 
 .left-side, .right-side {
@@ -356,15 +349,17 @@ span {
 
 .about {
 	width: 100%;
-	height: 100vh;
+	height: 140vh;
 	background: var(--gray-color);
-	overflow-x: hidden;
-	padding: 5vh 7vw;
+	padding: 2rem 7vw;
+	overflow: hidden;
+	position: relative;
 }
 
 .about-header {
 	display: flex;
 	align-items: flex-start;
+	margin-bottom: 30px;
 	position: relative;
 }
 
@@ -378,7 +373,7 @@ span {
 }
 
 .about-header h1 span {
-	color: #ED2B2A;
+	color: var(--secondary-color);
 }
 
 .about-header::before {
@@ -401,6 +396,83 @@ span {
 	left: 12rem;
 }
 
+.about-me {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+.about-me .intro {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 100%;
+	grid-column: span 2;
+}
+
+.intro h1, h2 {
+	font-family: 'Bruno Ace', sans-serif;
+	font-style: italic;
+	font-weight: 300;
+	font-size: clamp(17px, 4vw, 3rem);
+	color: var(--dark-color);
+	white-space: nowrap;
+	line-height: 50px;
+}
+
+.about-me .desc {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+}
+
+.about-btn {
+	display: flex;
+	justify-content: center;
+	width: 10rem;
+	height: 4rem;
+	margin-top: 20px;
+	padding: 15px;
+	border-radius: 30px;
+	color: var(--dirt-white);
+	background: var(--dark-color);
+	text-align: center;
+}
+
+.desc p {
+	font-size: clamp(12px, 3vw, 16px);
+	font-weight: 400;
+	line-height: 30px;
+}
+
+.mepic {
+	width: 90%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mepic .container {
+	width: 100%;
+	height: 90%;
+}
+
+.mepic .container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background-position: center;
+}
+
+
+
+
 @media only screen and (max-width: 1000px) {
 
 	.greetings h3 {
@@ -410,6 +482,49 @@ span {
 }
 
 @media only screen and (max-width: 768px){
+
+	.left-side {
+		left: 1rem;
+		gap: 17px;
+	}
+
+	.right-side {
+		right: 1rem;
+	}
+
+	.left-side a,
+	.right-side a {
+		font-size: 0.7rem;
+		padding: 0;
+	}
+
+	.right-side a{
+		bottom: 10rem;
+	}
+
+	.left-side a svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.left-side::after,
+	.right-side::after {
+		height: 5rem;
+	}
+
+	.about {
+		height: 250vh;
+	}
+
+	.about-me {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.mepic .container {
+		height: 30rem;
+	}
+
 	.nav-links {
 		position: fixed;
 		inset: 0 0 0 40%;
@@ -534,12 +649,44 @@ span {
 
 	.left-side a,
 	.right-side a {
+		font-size: 0.7rem;
+		padding: 0;
+	}
+
+	.right-side a{
+		bottom: 8.5rem;
+	}
+
+	.left-side a svg {
+		width: 17px;
+		height: 17px;
+	}
+
+	.left-side::after,
+	.right-side::after {
+		height: 4rem;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+
+	.left-side {
+		left: 0.7rem;
+		gap: 15px;
+	}
+
+	.right-side {
+		right: 0.7rem;
+	}
+
+	.left-side a,
+	.right-side a {
 		font-size: 0.6rem;
 		padding: 0;
 	}
 
 	.right-side a{
-		bottom: 9rem;
+		bottom: 8rem;
 	}
 
 	.left-side a svg {
@@ -549,7 +696,6 @@ span {
 
 	.left-side::after,
 	.right-side::after {
-		height: 4.5rem;
+		height: 3rem;
 	}
-
 }
