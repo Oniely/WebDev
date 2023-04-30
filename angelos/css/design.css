@@ -911,6 +911,7 @@ header .logo {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+	position: relative;
 }
 
 .form-details .input-box {
@@ -967,6 +968,27 @@ header .logo {
 .button input:active {
     color: #9D61A3;
     background-color: #EEC1F1;
+}
+
+.eml::after {
+	content: "*";
+	position: absolute;
+	color: red;
+	margin: 10px auto 10px -5px;
+	z-index: 999;
+}
+
+.required { 
+	position: absolute;
+	font-size: 12px;
+	top: 0;
+	left: 0.2rem;
+}
+
+.required::before {
+	content: "*";
+	color: red;
+	padding: 5px;
 }
 
 /** Contact Form End **/

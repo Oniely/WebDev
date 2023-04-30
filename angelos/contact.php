@@ -76,17 +76,17 @@
 
 
 		<div class="form-query">
-			<form action="#" method="post">
+			<form action="#" method="post" id="form">
 
 				<div class="form-details">
-
+					<span class="required">required</span>
 					<div class="input-box">
 						<input class="fname" id="fname" type="text" placeholder="First Name" name="fname" required>
 					</div>
 					<div class="input-box">
 						<input class="lname" id="lname" type="text" placeholder="Last Name" name="lname" required>
 					</div>
-					<div class="input-box">
+					<div class="input-box eml">
 						<input class="email" id="email" type="text" placeholder="Email Address" name="email" required>
 					</div>
 					<div class="input-box">
@@ -104,9 +104,6 @@
 				</div>
 
 			</form>
-
-
-
 
 		</div>
 
@@ -169,9 +166,12 @@
 
 			e.preventDefault();
 
-			const email = document.getElementById('email').value;
-
-			const msg = document.getElementById('msg').value;
+			var fname = document.getElementById('fname').value;
+			var lname = document.getElementById('lname').value;
+			var email = document.getElementById('email').value;
+			var phone = document.getElementById('phone').value;
+			var msg = document.getElementById('msg').value;
+			var form = document.getElementById('form');
 
 			Email.send({
 				Host: "smtp.elasticemail.com",
@@ -183,6 +183,7 @@
 				Body: msg
 			}).then(
 				message => alert(message)
+				[form.reset()]
 			);
 
 			return true;
