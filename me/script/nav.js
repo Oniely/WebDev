@@ -1,21 +1,34 @@
-const navbar = document.querySelector(".nav-links");
-const navToggle = document.querySelector(".burger")
+const nav = document.querySelector(".nav-links");
+const burger = document.querySelector(".burger");
 
-navToggle.addEventListener('click', () => {
-	const visibility = navbar.getAttribute('data-visible');
+burger.addEventListener("click", () => {
+	const visibility = nav.getAttribute("data-visible");
 
 	if (visibility == "false") {
-		navbar.setAttribute('data-visible', true);
+		nav.setAttribute("data-visible", true);
 	} else {
-		navbar.setAttribute('data-visible', false)
+		nav.setAttribute("data-visible", false);
+		navbar.classList.remove("navbar");
 	}
-})
-
-let resizeTimer;
-window.addEventListener("resize", () => {
-  document.body.classList.add("resize-animation-stopper");
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    document.body.classList.remove("resize-animation-stopper");
-  }, 400);
 });
+
+const navbar = document.querySelector(".credits-top");
+
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.target === navbar) {
+			if (entry.intersectionRatio === 0) {
+				// The navbar is out of view, show the burger
+				burger.classList.add("burgermenu");
+				nav.classList.add("navbar");
+			} else {
+				// The navbar is in view, hide the burger
+				burger.classList.remove("burgermenu");
+				nav.classList.remove("navbar");
+			}
+		}
+	});
+});
+
+// Observe the navbar element
+observer.observe(navbar);
