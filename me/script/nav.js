@@ -12,6 +12,7 @@ burger.addEventListener("click", () => {
 	}
 });
 
+
 const navbar = document.querySelector(".credits-top");
 
 const observer = new IntersectionObserver((entries) => {
