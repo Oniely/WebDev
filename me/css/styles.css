@@ -2,22 +2,31 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 	list-style: none;
 	text-decoration: none;
 	scroll-behavior: smooth;
 }
 
 :root {
-	--primary-color: #F1F6F9;
+	--primary-color: #f1f6f9;
 	--secondary-color: #394867;
-	--dark-color: #212A3E;
-	--gray-color: #9BA4B5;
-	--dirt-white: #ECE7E1;
+	--dark-color: #212a3e;
+	--gray-color: #9ba4b5;
+	--dirt-white: #ece7e1;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+	display: none;
+}
+
+.resize-animation-stopper * {
+	animation: none !important;
+	transition: none !important;
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
 }
 
 header {
@@ -28,7 +37,7 @@ header {
 	min-height: 100vh;
 	background-color: var(--secondary-color);
 	position: relative;
-	z-index: 100;	
+	z-index: 100;
 }
 
 nav {
@@ -89,11 +98,6 @@ nav {
 	display: none;
 }
 
-.resize-animation-stopper * {
-	animation: none !important;
-	transition: none !important;
-}
-
 .center {
 	display: flex;
 	justify-content: space-between;
@@ -131,7 +135,6 @@ nav {
 	padding: 3px;
 	transform: scale(1.5vw);
 }
-
 
 .role h3 {
 	color: var(--primary-color);
@@ -172,8 +175,6 @@ nav {
 	object-fit: cover;
 }
 
-
-
 .SLGN {
 	width: 100%;
 	height: 100vh;
@@ -188,7 +189,7 @@ nav {
 /* #ED2B2A - palette */
 
 span {
-	color: #ED2B2A;
+	color: #ed2b2a;
 }
 
 .contact {
@@ -199,7 +200,8 @@ span {
 	z-index: 99;
 }
 
-.left-side, .right-side {
+.left-side,
+.right-side {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -209,7 +211,7 @@ span {
 .right-side a {
 	color: var(--secondary-color);
 	font-size: 0.9rem;
-	font-family: 'Fira code' sans-serif;
+	font-family: "Fira code" sans-serif;
 	padding: 2px;
 	transition: transform 0.2s ease;
 }
@@ -221,7 +223,7 @@ span {
 	transition: transform 0.2s ease;
 }
 
-.left-side a:hover svg{
+.left-side a:hover svg {
 	stroke: var(--dark-color);
 	transform: translateY(-2px);
 }
@@ -249,7 +251,6 @@ span {
 	right: 2rem;
 	bottom: 0;
 	width: 18px;
-	
 }
 
 .left-side::after {
@@ -282,15 +283,15 @@ span {
 }
 
 .slogan h1 {
-	font-family: 'Audiowide', sans-serif;
-	font-size: clamp(2rem, 6vw, 4.5rem);	
+	font-family: "Audiowide", sans-serif;
+	font-size: clamp(3.5rem, 6vw, 4.5rem);
 	line-height: 80px;
 	white-space: nowrap;
 	font-weight: 900;
 }
-	
+
 .slogan h1 span {
-	font-family: 'Audiowide', sans-serif;
+	font-family: "Audiowide", sans-serif;
 	text-transform: uppercase;
 }
 
@@ -308,8 +309,8 @@ span {
 }
 
 .greetings h3 {
-	font-size: clamp(0.9rem, 1.2vw, 1.5rem);
-	line-height: 40px;
+	font-size: clamp(1rem, 1.4vw, 1.5rem);
+	line-height: 25px;
 }
 
 .arrow-container {
@@ -322,17 +323,18 @@ span {
 	left: 0;
 	right: 0;
 	margin: 0 auto;
-  }
-  
-  .arrow-down {
+}
+
+.arrow-down {
 	height: 6px;
 	background: black;
 	transform: rotate(45deg);
 	transform-origin: 0% 0%;
 	border-radius: 5px;
-  }
-  .arrow-down:after {
-	content: '';
+}
+
+.arrow-down:after {
+	content: "";
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -342,14 +344,13 @@ span {
 	background: black;
 	transform: rotate(-90deg);
 	transform-origin: 0% 100%;
-  }
-  
-  @keyframes bounce {
-  50% {
-	  transform: translateY(-15px);
+}
+
+@keyframes bounce {
+	50% {
+		transform: translateY(-15px);
 	}
-  }
-  
+}
 
 .about {
 	width: 100%;
@@ -369,7 +370,7 @@ span {
 
 .about-header h1,
 .about-header h1 span {
-	font-family: 'Ibarra Real Nova', sans-serif;
+	font-family: "Ibarra Real Nova", sans-serif;
 	font-size: clamp(2.5rem, 6vw, 4rem);
 	font-style: italic;
 	font-weight: 900;
@@ -405,7 +406,6 @@ span {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
-	
 }
 
 .about-me .intro {
@@ -416,8 +416,9 @@ span {
 	grid-column: span 2;
 }
 
-.intro h1, h2 {
-	font-family: 'Audiowide', sans-serif;
+.intro h1,
+h2 {
+	font-family: "Audiowide", sans-serif;
 	font-style: italic;
 	font-weight: 300;
 	font-size: clamp(28px, 4vw, 3rem);
@@ -439,7 +440,7 @@ span {
 .about-btn {
 	display: flex;
 	justify-content: center;
-	width: 10rem;
+	width: auto;
 	margin-top: 20px;
 	padding: 15px;
 	border-radius: 30px;
@@ -461,6 +462,7 @@ span {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding-bottom: 50px;
 }
 
 .mepic .container {
@@ -480,18 +482,168 @@ span {
 	height: 100vh;
 }
 
-@media only screen and (max-width: 1000px) {
+.navbar {
+	position: fixed;
+	inset: 0 0 0 60%;
+	z-index: 1000;
+	padding: min(30vh, 10rem) 1.5rem;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	flex-wrap: nowrap;
+
+	background: rgba(0, 0, 0, 0.5);
+	margin-top: -60px;
+	gap: 1rem;
+	backdrop-filter: blur(1rem);
+	transform: translateX(100%);
+	transition: transform 350ms ease-out;
+}
+
+.navbar li a {
+	font-size: clamp(1.5rem, 10vw, 2.5rem);
+	line-height: 80px;
+	font-weight: 600;
+}
+
+.navbar li a::after {
+	content: "·";
+	font-size: 4rem;
+	position: absolute;
+	right: 0;
+	transform: translateX(1.5rem);
+	transition: transform 250ms ease-out;
+}
+
+.navbar li a:hover::after {
+	transform: translateX(-2.5rem);
+}
+
+.navbar[data-visible="true"] {
+	transform: translateX(0%);
+}
+
+.burgermenu {
+	display: flex;
+	position: fixed;
+	z-index: 9999;
+	border: 0;
+	width: 2.5rem;
+	aspect-ratio: 1;
+	top: 1rem;
+	right: 1.5rem;
+	font-size: 0;
+	cursor: pointer;
+	border-radius: 50%;
+	padding: 0 5px;
+	background: var(--dark-color);
+	transform: scale(1.1);
+}
+
+svg {
+	height: 40px;
+	aspect-ratio: 1;
+}
+
+.line {
+	fill: none;
+	stroke: var(--primary-color);
+	stroke-width: 6;
+	transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+		stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+	stroke-dasharray: 60 207;
+	stroke-width: 6;
+}
+
+.line2 {
+	stroke-dasharray: 60 60;
+	stroke-width: 6;
+}
+
+.line3 {
+	stroke-dasharray: 60 207;
+	stroke-width: 6;
+}
+
+.opened .line1 {
+	stroke-dasharray: 90 207;
+	stroke-dashoffset: -134;
+	stroke-width: 6;
+}
+
+.opened .line2 {
+	stroke-dasharray: 1 60;
+	stroke-dashoffset: -30;
+	stroke-width: 6;
+}
+
+.opened .line3 {
+	stroke-dasharray: 90 207;
+	stroke-dashoffset: -134;
+	stroke-width: 6;
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.intro h1, h2 {
+		font-size: 40px;
+	}
+
+	.mepic {
+		padding: 0;
+	}
+
+	.mepic .container {
+		width: 90%;
+		height: 70%;
+	}
+
+	.slogan h1 {
+		font-size: clamp(3rem, 6vw, 4.5rem);
+		line-height: 60px;
+	}
 
 	.greetings h3 {
+		font-size: 14px;
 		line-height: 25px;
+		white-space: nowrap;
 	}
+
+
 
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
 
-	.home-link {
-		visibility: visible;
+	.slogan-container {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.slogan {
+		align-items: center;
+	}
+
+	.slogan h1 {
+		font-size: 2.8rem;
+		line-height: 50px;
+	}
+
+	.intro h1, h2{
+		font-size: clamp(1.5rem, 5vw, 2.5rem)
+	}
+
+	.greetings {
+		white-space: nowrap;
+		text-align: center;
+		align-items: center;
+	}
+
+	.greetings h3 {
+		font-size: clamp(12px, 3vw, 14px);
 	}
 
 	.about-me {
@@ -518,7 +670,7 @@ span {
 		padding: 0;
 	}
 
-	.right-side a{
+	.right-side a {
 		bottom: 6rem;
 	}
 
@@ -534,23 +686,22 @@ span {
 
 	.nav-links {
 		position: fixed;
-		inset: 0 0 0 40%;
+		inset: 0 0 0 45%;
 		z-index: 1000;
+		padding: min(30vh, 10rem) 1.5rem;
 		flex-direction: column;
 		justify-content: start;
-		padding: min(30vh, 10rem) 1.5rem;
 		align-items: start;
-		
-		background: rgba(0,0,0,0.5);
+		flex-wrap: nowrap;
+
+		background: rgba(0, 0, 0, 0.5);
 		margin-top: -60px;
 		gap: 1rem;
 		backdrop-filter: blur(1rem);
 		transition: transform 350ms ease-out;
 		transform: translateX(100%);
-		flex-direction: column;
-		flex-wrap: nowrap;
 	}
-	
+
 	.nav-links li a {
 		font-size: clamp(1.5rem, 10vw, 2.5rem);
 		line-height: 80px;
@@ -560,7 +711,20 @@ span {
 	.nav-links[data-visible="true"] {
 		transform: translateX(0%);
 	}
-	
+
+	.nav-links li a::after {
+		content: "·";
+		font-size: 4rem;
+		position: absolute;
+		right: 0;
+		transform: translateX(1.5rem);
+		transition: transform 250ms ease-out;
+	}
+
+	.nav-links li a:hover::after {
+		transform: translateX(-2.5rem);
+	}
+
 	.burger {
 		display: flex;
 		position: fixed;
@@ -581,109 +745,78 @@ span {
 	svg {
 		height: 40px;
 		aspect-ratio: 1;
-	  }
-	
+	}
+
 	.line {
 		fill: none;
 		stroke: var(--primary-color);
 		stroke-width: 6;
 		transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-		  stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-	  }
+			stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
 	.line1 {
 		stroke-dasharray: 60 207;
 		stroke-width: 6;
-	  }
+	}
+
 	.line2 {
 		stroke-dasharray: 60 60;
 		stroke-width: 6;
-	  }
+	}
+
 	.line3 {
 		stroke-dasharray: 60 207;
 		stroke-width: 6;
-	  }
+	}
+
 	.opened .line1 {
 		stroke-dasharray: 90 207;
 		stroke-dashoffset: -134;
 		stroke-width: 6;
-	  }
+	}
+
 	.opened .line2 {
 		stroke-dasharray: 1 60;
 		stroke-dashoffset: -30;
 		stroke-width: 6;
-	  }
+	}
+
 	.opened .line3 {
 		stroke-dasharray: 90 207;
 		stroke-dashoffset: -134;
 		stroke-width: 6;
-	  }	
-
-	.slogan-container {
-		flex-direction: column;
-		gap: 20px;
 	}
-
-	.slogan {
-		align-items: center;
-	}
-
-	.slogan h1{
-		line-height: 50px;
-	}
-
-	.greetings {
-		align-items: center;
-	}
-
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 425px) {
 
-	.intro h1, h2 {
-		font-size: clamp(1.5rem, 2vw, 20px);
+	.intro {
+		padding: 0 5px;
 	}
 
-	.desc p {
-		font-size: clamp(12px, 2vw, 14px);
+	.slogan h1 {
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
 	}
 
 	.greetings h3 {
+		font-size: clamp(9px, 3vw, 12px);
+		
+	}
+
+	.intro h1,
+	h2 {
+		font-size: clamp(1.1rem, 5.7vw, 25px);
 		line-height: 25px;
-		font-size: clamp(9px, 2vw, 1.5rem);
-		white-space: nowrap;
 	}
 
-	.left-side {
-		left: 0.8rem;
-		gap: 15px;
+	.desc p {
+		font-size: 12px;
 	}
 
-	.right-side {
-		right: 0.8rem;
+	.about-me .desc {
+		padding: 0 10px;
 	}
-
-	.left-side a,
-	.right-side a {
-		font-size: 0.7rem;
-		padding: 0;
-	}
-
-	.right-side a{
-		bottom: 5rem;
-	}
-
-	.left-side a svg {
-		width: 17px;
-		height: 17px;
-	}
-
-	.left-side::after,
-	.right-side::after {
-		height: 4rem;
-	}
-}
-
-@media only screen and (max-width: 400px) {
 
 	.left-side {
 		left: 0.7rem;
@@ -700,7 +833,7 @@ span {
 		padding: 0;
 	}
 
-	.right-side a{
+	.right-side a {
 		bottom: 4rem;
 	}
 

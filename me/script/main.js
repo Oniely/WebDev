@@ -1,14 +1,17 @@
-const navbar = document.querySelector('.navbar');
-const burger = document.querySelector('.burger');
-const header = document.querySelector('header')
+let resizeTimer;
+window.addEventListener("resize", () => {
+	document.body.classList.add("resize-animation-stopper");
+	clearTimeout(resizeTimer);
+	resizeTimer = setTimeout(() => {
+		document.body.classList.remove("resize-animation-stopper");
+	}, 400);
+});
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > header.offsetHeight) {
-    burger.style.display = 'flex';
-	navbar.classList.add('navbar')
-	
-} else {
-    burger.style.display = 'none';
-	navbar.classList.remove('navbar')
-  }
+let resizeeTimer;
+window.addEventListener("scroll", () => {
+	document.body.classList.add("resize-animation-stopper");
+	clearTimeout(resizeeTimer);
+	resizeeTimer = setTimeout(() => {
+		document.body.classList.remove("resize-animation-stopper");
+	}, 400);
 });
