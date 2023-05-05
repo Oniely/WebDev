@@ -230,9 +230,9 @@ span {
 
 .left-side {
 	position: fixed;
-	left: 2rem;
+	left: 1.5rem;
 	bottom: 0;
-	gap: 20px;
+	gap: 18px;
 }
 
 .right-side a {
@@ -248,7 +248,7 @@ span {
 
 .right-side {
 	position: fixed;
-	right: 2rem;
+	right: 1.5rem;
 	bottom: 0;
 	width: 18px;
 }
@@ -310,7 +310,8 @@ span {
 
 .greetings h3 {
 	font-size: clamp(1rem, 1.4vw, 1.5rem);
-	line-height: 25px;
+	line-height: 35px;
+	white-space: nowrap;
 }
 
 .arrow-container {
@@ -584,202 +585,122 @@ svg {
 
 .works {
 	width: 100%;
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 50px 150px;
+	padding: 50px 100px;
 	position: relative;
 }
 
 .header-container {
 	width: 100%;
-	text-align: left;
-	top: 2.5rem;
-	left: 0;
+	text-align: center;
+	top: 1.5rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 
 .header-container h1 {
-	font-family: 'Ibarra Real Nova', sans-serif;
-	font-size: 3.5rem;
+	font-size: 2.7rem;
 	font-weight: 900;
 	font-style: italic;
 	color: var(--dark-color);
+	margin-bottom: 10px;
+	letter-spacing: 1.5px;
 }
 
-.header-container h1::after {
-	content: "";
-	width: 30%;
-	height: 1px;
-	background: var(--dark-color);
-	position: absolute;
-	top: 13.5%;
-	left: 32rem;
+.header-container h3 {
+	font-size: 1rem;
+	line-height: 23px;
+	letter-spacing: 0.5px;
 }
 
-.projects-container {
+.project-container {
+	margin: 80px 0 0 0;
+	width: 100%;
+	height: 200vh;
+	text-align: right;
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 50rem;
+	border-radius: 10px;
 }
 
 .project {
-	display: flex;
 	width: 100%;
-	height: 22rem;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	border: 1px solid var(--dark-color);
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .p-img {
-	width: 100%;
+	display: flex;
+	justify-content: center;
+	width: 80vw;
 	height: 100%;
-	position: relative;
 	border-radius: 5px;
-	cursor: pointer;
-}
-
-.p-img::after {
-	content: "";
-	width: 100%;
-	height: 100%;
-	background-color: var(--dirt-white);
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0.4;
-	transition: 0.3s ease-out;
-}
-
-.p-img:hover::after {
-	opacity: 0;
 }
 
 .p-img img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 	border-radius: 5px;
+	transition: transform 0.5s ease;
 }
 
-.p-desc {
-	width: 40%;
-	display: flex;
-	flex-direction: column;
-	text-align: right;
-	padding: 50px 0;
-	gap: 10px;
-	position: relative;
-}
-
-.p-desc>div {
+.p-content {
+	width: 40vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 100%;
+	padding: 3% 0;
 }
 
-.p-name {
+.p-content > div {
 	display: flex;
 	flex-direction: column;
 }
 
-.p-name span {
+.p-content > div span {
 	font-size: 14px;
 	color: var(--secondary-color);
 }
 
-.p-name h3 a {
-	color: var(--dark-color);
+.p-content > div h3 {
 	font-size: 1.5rem;
-	font-weight: 700;
-	letter-spacing: 0.5px;
+	color: var(--dark-color);
 }
 
-.p-desc h3 a:hover {
-	color: black;
-}
-
-.p-content {
+.p-content .p-desc {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	flex-wrap: nowrap;
-	position: absolute;
-	width: 30rem;
-	top: 33%;
-	right: 0;
-	background: var(--dirt-white);
-	z-index: 5;
-	padding: 30px;
-	border-radius: 5px;
+	padding: 20px 0 20px 30px;
 }
 
 .p-content p {
-	display: block;
-	font-size: 18px;
-}
-
-.p-content a {
-	color: #8A2BE2;
-	position: relative;
-}
-
-.p-content a::after {
-	content: "";
-	width: 0;
-	height: 0;
-	background: #8A2BE2;
-	transition: 0.4s ease-out;
-}
-
-.p-content a:hover::after {
-	content: "";
-	width: 100%;
-	height: 1px;
-	position: absolute;
-	top: 1.3rem;
-	left: 0;
-	transition: 0.3s ease-in;
-}
-
-.p-skills {
-	display: flex;
-	justify-content: flex-end;
-	gap: 10px;
-	white-space: nowrap;
-}
-
-.p-skills li {
+	font-size: clamp(14px, 1.5vw, 18px);
+	font-weight: 400;
 	color: var(--dark-color);
-	font-size: 14px;
 }
 
 .p-links {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 20px;
-	position: absolute;
-	bottom: 5px;
-	right: 0;
+	justify-content: flex-end;
+	gap: 10px;
 }
 
-.p-links a{
-	color: var(--dark-color);
-}
-
-.p-links a:hover {
-	color: black;
-}
-
-.p-links a svg {
+.p-links a svg{
+	stroke: var(--dark-color);
 	width: 25px;
 	height: 25px;
 }
-
 
 @media only screen and (max-width: 1024px) {
 
@@ -804,7 +725,7 @@ svg {
 
 	.greetings h3 {
 		font-size: 14px;
-		line-height: 25px;
+		line-height: 30px;
 		white-space: nowrap;
 	}
 
@@ -813,6 +734,34 @@ svg {
 }
 
 @media only screen and (max-width: 768px) {
+
+	.works {
+		padding: 50px 50px;
+	}
+
+	.project-container {
+		margin: 50px 0 0 0;
+	}
+
+	.project {
+		flex-direction: column;
+	}
+
+	.p-img {
+		width: 100%;
+		
+	}
+
+	.p-content {
+		width: 100%;
+		align-items: flex-start;
+		text-align: start;
+	}
+
+	.p-content .p-desc {
+		text-align: start;
+		padding: 20px 20px 20px 0;
+	}
 
 	.slogan-container {
 		flex-direction: column;
@@ -830,7 +779,8 @@ svg {
 
 	.intro h1,
 	h2 {
-		font-size: clamp(1.5rem, 5vw, 2.5rem)
+		font-size: clamp(1.8rem, 5vw, 2.5rem);
+		line-height: 35px;
 	}
 
 	.greetings {
@@ -849,7 +799,7 @@ svg {
 	}
 
 	.mepic .container {
-		height: 30rem;
+		height: 25rem;
 	}
 
 	.left-side {
@@ -872,8 +822,8 @@ svg {
 	}
 
 	.left-side a svg {
-		width: 20px;
-		height: 20px;
+		width: 18px;
+		height: 18px;
 	}
 
 	.left-side::after,
@@ -988,6 +938,40 @@ svg {
 
 @media only screen and (max-width: 425px) {
 
+	.left-side {
+		left: 0.8rem;
+		gap: 15px;
+	}
+
+	.right-side {
+		right: 0.8rem;
+	}
+
+	.left-side a,
+	.right-side a {
+		font-size: 0.6rem;
+		padding: 0;
+	}
+
+	.right-side a {
+		bottom: 4rem;
+	}
+
+	.left-side a svg {
+		width: 18px;
+		height: 16px;
+	}
+
+	.left-side::after,
+	.right-side::after {
+		height: 3rem;
+	}
+
+	.mepic .container {
+		width: 90%;
+		height: 20rem;
+	}
+
 	.intro {
 		padding: 0 5px;
 	}
@@ -1003,7 +987,7 @@ svg {
 
 	.intro h1,
 	h2 {
-		font-size: clamp(1.1rem, 5.7vw, 25px);
+		font-size: clamp(1.4rem, 5.7vw, 25px);
 		line-height: 25px;
 	}
 
@@ -1015,32 +999,5 @@ svg {
 		padding: 0 10px;
 	}
 
-	.left-side {
-		left: 0.7rem;
-		gap: 15px;
-	}
-
-	.right-side {
-		right: 0.7rem;
-	}
-
-	.left-side a,
-	.right-side a {
-		font-size: 0.5rem;
-		padding: 0;
-	}
-
-	.right-side a {
-		bottom: 4rem;
-	}
-
-	.left-side a svg {
-		width: 15px;
-		height: 15px;
-	}
-
-	.left-side::after,
-	.right-side::after {
-		height: 3rem;
-	}
+	
 }
