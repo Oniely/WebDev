@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	list-style: none;
 	text-decoration: none;
 	scroll-behavior: smooth;
@@ -21,7 +21,6 @@
 }
 
 .resize-animation-stopper * {
-	animation: none !important;
 	transition: none !important;
 	-webkit-transition: none !important;
 	-moz-transition: none !important;
@@ -35,9 +34,20 @@ header {
 	justify-content: space-between;
 	width: 100%;
 	min-height: 100vh;
-	background-color: var(--secondary-color);
 	position: relative;
 	z-index: 100;
+}
+
+header video {
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 nav {
@@ -103,12 +113,14 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
+	margin-top: 25px;
 }
 
 .center .logo {
 	color: var(--primary-color);
-	width: clamp(7rem, 30vw, 12rem);
-	margin: 0 0 0 5vw;
+	width: clamp(7rem, 30vw, 18rem);
+	margin: 0 0 0 6vw;
+	z-index: -1;
 }
 
 .center .logo img {
@@ -122,7 +134,7 @@ nav {
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	margin: 0 5vw 0 0;
+	margin-right: 5vw;
 	position: relative;
 }
 
@@ -138,28 +150,58 @@ nav {
 
 .role h3 {
 	color: var(--primary-color);
-	font-size: clamp(1.2rem, 2.5vw, 2rem);
+	font-size: 1.6rem;
 	font-weight: 500;
 	line-height: 2rem;
 }
 
 .bigname-btm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+}
+
+.sliding-text {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0 0 5px 0;
+	overflow: hidden;
 }
 
-.bigname-btm h1 {
+.sliding-text h1 {
+	font-family: 'Montserrat', sans-serif;
+	display: inline-block;
+	white-space: nowrap;
 	color: var(--primary-color);
-	font-size: 9vw;
-	font-weight: 600;
+	font-size: 10rem;
+	font-weight: 700;
+	letter-spacing: 1.2px;
 	text-align: center;
+	animation: sliding 10s linear infinite;
+}
+
+.sliding-text #slide1 {
+	padding-left: 0%;
+}
+.sliding-text #slide2 {
+	padding-left: 100%;
+}
+
+@keyframes sliding {
+	0% {
+		transform: translate(0,0);
+	}
+
+	100% {
+		transform: translate(-100%, 0);
+	}
 }
 
 .img-container {
-	width: 35%;
+	width: 50%;
 	height: 100%;
 	position: absolute;
 	left: 0;
@@ -239,6 +281,7 @@ span {
 	writing-mode: vertical-rl;
 	position: absolute;
 	bottom: 7.5rem;
+	font-size: 0.8rem;
 }
 
 .right-side a:hover {
@@ -291,7 +334,7 @@ span {
 }
 
 .slogan h1 span {
-	font-family: "Audiowide", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	text-transform: uppercase;
 }
 
@@ -409,7 +452,7 @@ span {
 	gap: 10px;
 }
 
-.about-me .intro {
+.intro {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -420,8 +463,7 @@ span {
 
 .intro h1,
 h2 {
-	font-family: "Ibarra Real Nova", sans-serif;
-	font-weight: 900;
+	font-weight: 700;
 	font-size: clamp(28px, 4vw, 3rem);
 	color: var(--dark-color);
 	white-space: nowrap;
@@ -453,7 +495,7 @@ h2 {
 
 .desc p {
 	font-size: clamp(14px, 2vw, 18px);
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 30px;
 }
 
@@ -490,14 +532,14 @@ h2 {
 
 	background: rgba(0, 0, 0, 0.5);
 	margin-top: -60px;
-	gap: 1rem;
+	gap: 2.5rem;
 	backdrop-filter: blur(1rem);
 	transform: translateX(100%);
 	transition: transform 350ms ease-out;
 }
 
 .navbar li a {
-	font-size: clamp(1.5rem, 10vw, 2.5rem);
+	font-size: clamp(1.5rem, 10vw, 4rem);
 	line-height: 80px;
 	font-weight: 600;
 }
@@ -585,11 +627,13 @@ svg {
 
 .works {
 	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 50px 100px;
+	background: var(--primary-color);
 	position: relative;
 }
 
@@ -603,30 +647,31 @@ svg {
 }
 
 .header-container h1 {
-	font-size: 2.7rem;
+	font-size: 2.8rem;
 	font-weight: 900;
 	font-style: italic;
 	color: var(--dark-color);
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	letter-spacing: 1.5px;
 }
 
 .header-container h3 {
-	font-size: 1rem;
-	line-height: 23px;
+	font-size: 1.05rem;
+	line-height: 25px;
 	letter-spacing: 0.5px;
 }
 
 .project-container {
 	margin: 80px 0 0 0;
 	width: 100%;
-	height: 200vh;
+	height: auto;
 	text-align: right;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	border-radius: 10px;
+	gap: 8rem;
 }
 
 .project {
@@ -634,15 +679,17 @@ svg {
 	height: auto;
 	display: flex;
 	justify-content: center;
-	border: 1px solid var(--dark-color);
+	border: 1px solid var(--secondary-color);
 	padding: 10px;
 	border-radius: 10px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+	transition: box-shadow 0.5s ease-out;
 }
 
 .p-img {
 	display: flex;
 	justify-content: center;
-	width: 80vw;
+	width: 78vw;
 	height: 100%;
 	border-radius: 5px;
 }
@@ -651,8 +698,12 @@ svg {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-	border-radius: 5px;
+	border-radius: 10px;
 	transition: transform 0.5s ease;
+}
+
+.p-img img:hover ~ .project {
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .p-content {
@@ -670,6 +721,7 @@ svg {
 
 .p-content > div span {
 	font-size: 14px;
+	font-weight: 600;
 	color: var(--secondary-color);
 }
 
@@ -700,6 +752,19 @@ svg {
 	stroke: var(--dark-color);
 	width: 25px;
 	height: 25px;
+}
+
+.pj-reverse {
+	flex-direction: row-reverse;
+	text-align: left;
+}
+
+.pj-reverse .p-content .p-desc {
+	padding: 20px 20px 20px 0;
+}
+
+.pj-reverse .p-links {
+	justify-content: flex-start;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -734,6 +799,14 @@ svg {
 }
 
 @media only screen and (max-width: 768px) {
+
+	.center .role {
+		margin-right: 2vw;
+	}
+
+	.img-container {
+		width: 70%;
+	}
 
 	.works {
 		padding: 50px 50px;
@@ -779,7 +852,7 @@ svg {
 
 	.intro h1,
 	h2 {
-		font-size: clamp(1.8rem, 5vw, 2.5rem);
+		font-size: clamp(1.7rem, 5vw, 2.5rem);
 		line-height: 35px;
 	}
 
@@ -833,7 +906,7 @@ svg {
 
 	.nav-links {
 		position: fixed;
-		inset: 0 0 0 45%;
+		inset: 0 0 0 50%;
 		z-index: 1000;
 		padding: min(30vh, 10rem) 1.5rem;
 		flex-direction: column;
@@ -936,7 +1009,37 @@ svg {
 	}
 }
 
+@media only screen and (max-width: 720px) {
+	
+	header {
+		overflow: hidden;
+	}
+
+	.center {
+		position: static;
+	}
+
+	.center .logo {
+		position: absolute;
+		top: 5rem;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		transform: scale(3);
+	}
+
+	.center .role {
+		position: absolute;
+		bottom: 12.5rem;
+		left: 1.5rem;
+	}
+}
+
 @media only screen and (max-width: 425px) {
+
+	.img-container {
+		width: 100%;
+	}
 
 	.left-side {
 		left: 0.8rem;
@@ -972,10 +1075,6 @@ svg {
 		height: 20rem;
 	}
 
-	.intro {
-		padding: 0 5px;
-	}
-
 	.slogan h1 {
 		font-size: clamp(2.5rem, 6vw, 3.5rem);
 	}
@@ -985,10 +1084,16 @@ svg {
 
 	}
 
+	.intro {
+		padding: 0;
+	}
+
 	.intro h1,
 	h2 {
-		font-size: clamp(1.4rem, 5.7vw, 25px);
+		font-size: clamp(1.3rem, 5.7vw, 25px);
 		line-height: 25px;
+		padding: 0;
+		margin: 0;
 	}
 
 	.desc p {
