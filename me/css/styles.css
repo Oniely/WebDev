@@ -352,7 +352,7 @@ span {
 }
 
 .greetings h3 {
-	font-size: clamp(1rem, 1.4vw, 1.5rem);
+	font-size: clamp(1rem, 1.5vw, 1.5rem);
 	line-height: 35px;
 	white-space: nowrap;
 }
@@ -399,10 +399,11 @@ span {
 .about {
 	width: 100%;
 	height: auto;
-	background: var(--gray-color);
+	background: var(--primary-color);
 	padding: 2rem 7vw;
 	overflow: hidden;
 	position: relative;
+	border-bottom: 1px solid var(--dark-color);
 }
 
 .about-header {
@@ -477,7 +478,7 @@ h2 {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	padding: 20px;
+	padding: 15px;
 }
 
 .about-btn {
@@ -509,8 +510,8 @@ h2 {
 }
 
 .mepic .container {
-	width: 90%;
-	height: 90%;
+	width: 100%;
+	height: 70%;
 }
 
 .mepic .container img {
@@ -692,6 +693,7 @@ svg {
 	height: auto;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	border: 1px solid var(--secondary-color);
 	padding: 10px;
 	border-radius: 10px;
@@ -707,7 +709,12 @@ svg {
 	border-radius: 5px;
 }
 
-.p-img img {
+.p-img a{
+	width: 100%;
+	height: 100%;
+}
+
+.p-img a img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
@@ -738,7 +745,7 @@ svg {
 	color: var(--secondary-color);
 }
 
-.p-content > div h3 {
+.p-content > div a {
 	font-size: 1.5rem;
 	color: var(--dark-color);
 }
@@ -765,6 +772,12 @@ svg {
 	stroke: var(--dark-color);
 	width: 25px;
 	height: 25px;
+	transition: transform 0.3s ease-out;
+}
+
+.p-links a svg:hover {
+	stroke: black;
+	transform: translateY(-3px);
 }
 
 .pj-reverse {
@@ -780,6 +793,30 @@ svg {
 	justify-content: flex-start;
 }
 
+
+.notables {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.notables-head {
+	width: 100%;
+	height: 8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.notables-head h1 {
+	font-size: 2.8rem;
+	font-weight: 900;
+	color: var(--dark-color);
+}
+
 @media only screen and (max-width: 1024px) {
 
 	.intro h1,
@@ -792,8 +829,8 @@ svg {
 	}
 
 	.mepic .container {
-		width: 90%;
-		height: 70%;
+		width: 100%;
+		height: 60%;
 	}
 
 	.slogan h1 {
@@ -859,8 +896,8 @@ svg {
 	}
 
 	.slogan h1 {
-		font-size: 2.8rem;
-		line-height: 50px;
+		font-size: 3rem;
+		line-height: 60px;
 	}
 
 	.intro h1,
@@ -875,8 +912,12 @@ svg {
 		align-items: center;
 	}
 
+	.greetings h1 {
+		font-size: 1.5rem;
+	}
+
 	.greetings h3 {
-		font-size: clamp(12px, 3vw, 14px);
+		font-size: clamp(14px, 2.5vw, 16px);
 	}
 
 	.about-me {
@@ -1024,6 +1065,10 @@ svg {
 
 @media only screen and (max-width: 720px) {
 	
+	nav {
+		padding: 0 2rem;
+	}
+
 	header {
 		overflow: hidden;
 	}
@@ -1049,6 +1094,10 @@ svg {
 }
 
 @media only screen and (max-width: 425px) {
+
+	nav {
+		padding: 0 1.5rem;
+	}
 
 	.img-container {
 		width: 100%;
@@ -1090,11 +1139,21 @@ svg {
 
 	.slogan h1 {
 		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		line-height: 50px;
+	}
+
+	.SLGN {
+		padding: 0 25px;
 	}
 
 	.greetings h3 {
-		font-size: clamp(9px, 3vw, 12px);
+		font-size: 12px;
+		white-space: normal;
 
+	}
+
+	.arrow-container {
+		bottom: 1.5rem;
 	}
 
 	.intro {
@@ -1114,7 +1173,7 @@ svg {
 	}
 
 	.about-me .desc {
-		padding: 0 10px;
+		padding: 0 13px;
 	}
 
 	
