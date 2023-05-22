@@ -21,7 +21,8 @@ body::-webkit-scrollbar-thumb {
 
 .form-sect {
 	width: 100%;
-	height: 100vh;
+	height: auto;
+	min-height: 100vh;
 
 	color: #EEEEEE;
 	background: #222831;
@@ -37,6 +38,7 @@ body::-webkit-scrollbar-thumb {
 
 .form-sect h1 {
 	font-size: 2.5rem;
+	color: #98EECC;
 }
 
 .goto {
@@ -61,7 +63,7 @@ body::-webkit-scrollbar-thumb {
 .form-sect form {
 	max-width: 600px;
 	width: 100%;
-	height: 80%;
+	height: 80vh;
 
 	border: 1px solid #EEEEEE;
 
@@ -142,15 +144,22 @@ body::-webkit-scrollbar-thumb {
 	box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 	.form-sect {
 		width: 100%;
 		height: auto;
 		padding: 20px;
 	}
 
+	.goto {
+		position: static;
+		margin-top: 20px;
+	}
+
 	.form-sect h1 {
 		font-size: 2rem;
+		white-space: nowrap;
+		margin-bottom: 10px;
 	}
 
 	.form-sect form {
@@ -195,9 +204,14 @@ body::-webkit-scrollbar-thumb {
 	color: #98EECC;
 }
 
-.view-sect table {
-	border-collapse: collapse;
+.view-sect .t-container {
+	width: 70%;
+}
 
+.view-sect table {
+	width: 100%;
+
+	border-collapse: collapse;
 	box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
@@ -206,7 +220,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .view-sect th,
-td {
+.view-sect td {
 	border: 1px solid #EEEEEE;
 	padding: 10px 30px 10px 15px;
 	text-align: left;
@@ -214,8 +228,9 @@ td {
 }
 
 .view-sect #t-link {
-	padding: 10px;
+	padding: 20px 0;
 	white-space: nowrap;
+	text-align: center;
 }
 
 .view-sect #t-link a {
@@ -237,4 +252,47 @@ td {
 
 .view-sect tbody tr {
 	border: 1px solid #EEEEEE;
+}
+
+@media only screen and (max-width: 700px) {
+
+	.view-sect {
+		padding: 40px;
+	}
+
+	.view-sect .t-container {
+		width: 100%;
+	}
+
+	.view-sect h1{
+		font-size: 2rem;
+		white-space: nowrap;
+		margin-bottom: 10px;
+	}
+
+	.view-sect th,
+	.view-sect td {
+		padding: 5px 15px 5px 10px;
+		font-size: 14px;
+	}
+
+	.view-sect #t-link {
+		padding: 10px 5px;
+	}
+
+	.view-sect #t-link a {
+		font-size: 12px;
+	}
+
+	.goto {
+		position: static;
+		margin-top: 20px;
+	}
+
+}
+
+@media only screen and (max-width: 510px) {
+	.view-sect .t-container {
+		overflow-x: scroll;
+	}
 }

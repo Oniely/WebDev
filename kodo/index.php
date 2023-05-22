@@ -19,8 +19,6 @@
 
 		<h1>Student Form</h1>
 
-		<a class="goto" href="view.php">Goto View</a>
-
 		<form action="#" method="post">
 
 			<div class="input-div">
@@ -77,6 +75,8 @@
 			</div>
 			
 		</form>
+
+		<a class="goto" href="view.php">Goto View</a>
 
 		<?php
 
