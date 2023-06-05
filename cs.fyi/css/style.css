@@ -116,4 +116,72 @@ footer h1 {
   font-size: 20px;
   font-weight: 400;
   text-align: center;
+  padding-top: 20px;
+}
+
+.explore {
+  width: 750px;
+  margin: 0 auto;
+  padding: 0 15px;
+  margin-top: 15px;
+  margin-bottom: 300px;
+}
+.explore .header {
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.explore .header h1 {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 70px;
+}
+.explore .header h2 {
+  color: #A3A3A3;
+  font-size: 20px;
+  font-weight: 400;
+}
+.explore .categories {
+  padding: 25px 0 0 0;
+  margin-top: 28px;
+}
+.explore .categories .tag-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.explore .categories .tag-container span {
+  color: #737373;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+}
+.explore .categories .tag-container .tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.explore .categories .tag-container .tags a {
+  color: #A3A3A3;
+  background: #262626;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 7px 12px;
+  border-radius: 5px;
+  margin: 0 8px 8px 0;
+}
+.explore .categories .tag-container .tags a span {
+  color: #737373;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 8px;
+}
+.explore .categories .tag-container .tags a:hover {
+  color: black;
+  background: #A3A3A3;
+}
+.explore .categories .tag-container .tags a:hover span {
+  color: black;
 }/*# sourceMappingURL=style.css.map */
