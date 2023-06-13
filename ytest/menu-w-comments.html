@@ -1,0 +1,170 @@
+/* Create an object that has the necesary key and value for the menu-items */
+
+const menuItem = [
+	{
+		id: 1,
+		title: "Chocolate Pancake",
+		categories: "Meal",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+	{
+		id: 2,
+		title: "Chocolate Pancake",
+		categories: "Breakfast",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+	{
+		id: 3,
+		title: "Chocolate Pancake",
+		categories: "Meal",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+	{
+		id: 4,
+		title: "Chocolate Pancake",
+		categories: "Meal",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+	{
+		id: 5,
+		title: "Chocolate Pancake",
+		categories: "Shakes",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+	{
+		id: 6,
+		title: "Chocolate Pancake",
+		categories: "Shakes",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+	{
+		id: 7,
+		title: "Chocolate Pancake",
+		categories: "Breakfast",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+	{
+		id: 8,
+		title: "Chocolate Pancake",
+		categories: "Shakes",
+		price: 8.99,
+		img: "./images/menu-item.jpeg",
+		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit ab exercitationem sapiente voluptatibus, laboriosam consequatur ipsum vel at autem."
+	},
+]
+
+const sectionCenter = document.querySelector('.section-center');
+const btnContainer = document.querySelector('.btn-container')
+
+
+/* When the window load (DOMContentLoaded) we want to do the following: */
+window.addEventListener('DOMContentLoaded', () => {
+/* Create a variable displayItem that has the value of a object array loop called map just like the foreach function and it will return an html to display item */
+	let displayItem = menuItem.map((item) => {
+
+		return `<article class="menu-item">
+			<img src=${item.img} alt=${item.title} class="photo" />
+			<div class="item-info">
+			  <header>
+				<h4>${item.title}</h4>
+				<h4>${item.categories}</h4>
+				<h4 class="price">$${item.price}</h4>
+			  </header>
+			  <p class="item-text">
+				${item.desc}
+				
+			  </p>
+			</div>
+		  </article>`;
+
+	})
+	/* In here we basically saying that we want the displayItem to join with all the things we looped over and add space between them to make them more readable in the html */
+	displayItem = displayItem.join(" ")
+	/* Then we add them to the empty div by using innerHTML = the new displayItem that has a space between them to work try console.log(displayItem) */
+	sectionCenter.innerHTML = displayItem
+
+
+	/* creating a new Map just copied this from stackoverflow a syntax to get the unique datas in this case the unique datas of item.categories */
+	let uniqueBtn = [...new Map(menuItem.map(item => [item.categories, item])).values()]
+	/* In here we get the newly unique datas we got and making a btn out of them with the class of filter-btn */
+	let displayBtn = uniqueBtn.map((btn) => {
+
+		return `
+		<button type="button" class="filter-btn">
+          ${btn.categories}
+        </button>
+		`
+	})
+	/* in here just like above we added the btns we looped over using map and  */
+	displayBtn = displayBtn.join('')
+	/* added them to the empty container of btnContainer with += 
+	why += and not = ? because we already have a btn called all available 
+	we will basically add a btn from the unique categories. Try removing +/entire line to understand more */
+	btnContainer.innerHTML += displayBtn
+	
+	/* Getting all the btn that has a class of filter-btn */
+	const filterBtn = document.querySelectorAll('.filter-btn');
+	/* and here looping from all the btn  */
+	filterBtn.forEach((btn) => {
+		/* and adding an eventlistener CLICK that has a function to load the menu that has a specific categories based on the CLICKED btn */
+		btn.addEventListener('click', () => {
+			/* the same from the above code just slightly modified 
+			added an if statement that when the button is clicked we want to 
+			check if the btn clicked is equal to a specific categories from item and just outputting that specific categories */
+			let displayItem = menuItem.map((item) => {
+				if (item.categories == btn.innerText) {
+					return `<article class="menu-item">
+					<img src=${item.img} alt=${item.title} class="photo" />
+					<div class="item-info">
+					<header>
+						<h4>${item.title}</h4>
+						<h4>${item.categories}</h4>
+						<h4 class="price">$${item.price}</h4>
+					</header>
+					<p class="item-text">
+						${item.desc}
+						
+					</p>
+					</div>
+				</article>`;
+				} 
+				if(btn.innerText == "All") {
+					return `<article class="menu-item">
+					<img src=${item.img} alt=${item.title} class="photo" />
+					<div class="item-info">
+					<header>
+						<h4>${item.title}</h4>
+						<h4>${item.categories}</h4>
+						<h4 class="price">$${item.price}</h4>
+					</header>
+					<p class="item-text">
+						${item.desc}
+						
+					</p>
+					</div>
+				</article>`;
+				}
+				 
+			})
+			
+			displayItem = displayItem.join(" ")		
+			sectionCenter.innerHTML = displayItem
+		})
+	})
+
+})
+
