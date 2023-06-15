@@ -67,6 +67,7 @@ header nav button i {
     overflow: hidden;
     background-color: olivedrab;
     transition: 0.3s ease-out;
+    visibility: hidden;
   }
   header nav .nav-link li {
     width: 100%;
@@ -84,5 +85,6 @@ header nav button i {
   }
   header nav .show-link {
     height: 12rem;
+    visibility: visible;
   }
 }/*# sourceMappingURL=navbar.css.map */

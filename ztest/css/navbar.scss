@@ -91,6 +91,7 @@ header {
 
 				background-color: olivedrab;
 				transition: 0.3s ease-out;
+				visibility: hidden;
 
 				li {
 					width: 100%;
@@ -111,6 +112,7 @@ header {
 
 			.show-link {
 				height: 12rem;
+				visibility: visible;
 			}
 
 		}
