@@ -26,22 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	form.onsubmit = () => {
-		const input = document.querySelector('#input').value;
+		const input = document.querySelector('#input').value.toLowerCase();
 		const todoList = document.querySelector('.todo');
 		
-		todoList.innerHTML += addList(input);
+		if (!value.includes(input) && input !== "") {
+
+			todoList.innerHTML += addList(input);
 		
 		document.querySelector("#input").value = "";
 
 		const closeBtn = document.querySelectorAll('button');
 
-		closeBtn.forEach(btn => {
-			btn.addEventListener('click', () => {
-				const currentBtn = btn.parentElement;
-
-				currentBtn.style.display = "none";
-			})
-		})
+		
 
 		const listItem = document.querySelectorAll('p');
 
@@ -57,6 +53,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		value.push(input)
 		localStorage.setItem('todo', JSON.stringify(value))
+
+		closeBtn.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const currentBtn = btn.parentElement;
+	
+				currentBtn.style.display = "none";
+				let arrayItems = JSON.parse(localStorage.getItem('todo'));
+	
+				arrayItems.forEach(item => {
+					const p = currentBtn.children[0].textContent;
+	
+					if (item == p) {
+						if (value.includes(item)) {
+							let index = value.indexOf(item);
+							value.splice(index, 1);
+							
+							localStorage.setItem('todo', JSON.stringify(value));
+						}
+					}
+				})
+			})
+		})
+		} else {
+			console.log("Already Exist;");
+		}
+
 		return false;
 	}
 
@@ -68,6 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
 			const currentBtn = btn.parentElement;
 
 			currentBtn.style.display = "none";
+			let arrayItems = JSON.parse(items)
+
+			arrayItems.forEach(item => {
+				const p = currentBtn.children[0].textContent;
+
+				if (item == p) {
+					if (value.includes(item)) {
+						let index = value.indexOf(item);
+						value.splice(index, 1);
+						
+						localStorage.setItem('todo', JSON.stringify(value));
+					}
+				}
+			})
 		})
 	})
 
