@@ -97,7 +97,7 @@ session_start();
 							<button><i class="fa-regular fa-circle-question"></i>FAQs</button>
 						</a>
 
-						<a href="login.php" id="sign-out">
+						<a href="index.php" id="sign-out">
 							<button><i class='bx bx-door-open'></i>Sign Out</button>
 						</a>
 

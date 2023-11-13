@@ -45,15 +45,12 @@ header .todo li {
   justify-content: space-between;
   align-items: center;
   background: #f1f1f1;
-  
 }
 header .todo li p {
   width: 100%;
   font-size: 1.2rem;
   cursor: pointer;
-  text-transform: capitalize;
 }
-
 header .todo li .done {
   text-decoration: line-through;
   position: relative;

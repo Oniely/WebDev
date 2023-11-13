@@ -29,7 +29,7 @@ session_start();
 
 		<div class="login-container">
 
-			<form action="home.php" method="post">
+			<form action="#" method="post">
 
 				<img src="images/login_profile.svg" alt="profile">
 				<h1>Login</h1>
@@ -89,9 +89,9 @@ session_start();
 				$result = $conn->query($sql);
 
 
-				if (!empty($_POST['logUser']) || !empty($_POST['logPass'])) {
+				if (!empty($_POST['logUser']) && !empty($_POST['logPass'])) {
 					if ($result->fetch_assoc()) {
-						header("location: index.php");
+						header("location: home.php");
 					} else {
 						echo '
 						<script>

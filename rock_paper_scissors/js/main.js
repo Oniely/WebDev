@@ -13,9 +13,14 @@ const options = [
 	},
 ]
 
-
 const btns = document.querySelectorAll('[data-btn]');
 const tryAgainBtn = document.querySelector('#try');
+
+function randomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -27,8 +32,10 @@ window.addEventListener("DOMContentLoaded", () => {
 			const aiPic = document.querySelector('#aiPic');
 			pic.innerHTML = "";
 
-			let random = Math.round(Math.random() * 2);
+			let random = randomInt(0,2);
 			const ai = options[random];
+
+            console.log(random)
 			
 			aiPic.innerHTML = `<img src="${ai.picture}">`;
 
