@@ -1,0 +1,189 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #2E2947;
+    color: #fff;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 2rem 20rem;
+}
+
+.top {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.top span {
+    font-size: 2rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 5rem;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20rem;
+
+    position: relative;
+}
+
+.images-container div {
+    width: 150px;
+    height: 150px;
+}
+
+.images-container div:nth-child(1) {
+    transform: scaleX(-1);
+}
+
+.images-container div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.images-container #vs {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    mix-blend-mode: color-burn;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.button button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    color: white;
+}
+
+@keyframes playerShake {
+    0% {
+        transform: scaleX(-1) rotate(0deg);
+    }
+
+    15% {
+        transform: scaleX(-1) rotate(20deg);
+    }
+
+    25% {
+        transform: scaleX(-1) rotate(-20deg);
+    }
+
+    35% {
+        transform: scaleX(-1) rotate(20deg);
+    }
+
+    50% {
+        transform: scaleX(-1) rotate(-20deg);
+    }
+
+    65% {
+        transform: scaleX(-1) rotate(20deg);
+    }
+
+    75% {
+        transform: scaleX(-1) rotate(-20deg);
+    }
+
+    85% {
+        transform: scaleX(-1) rotate(20deg);
+    }
+
+    100% {
+        transform: scaleX(-1) rotate(0deg);
+    }
+}
+
+@keyframes computerShake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(20deg);
+    }
+
+    25% {
+        transform: rotate(-20deg);
+    }
+
+    35% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        transform: rotate(-20deg);
+    }
+
+    65% {
+        transform: rotate(20deg);
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
+
+    85% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes resultAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
