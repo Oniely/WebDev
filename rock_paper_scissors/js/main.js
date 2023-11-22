@@ -1,3 +1,12 @@
+const startBtn = document.querySelector('#start');
+const asking = document.querySelector('.asking');
+const playing = document.querySelector('.playing');
+
+startBtn.addEventListener('click', () => {
+    asking.style.display = 'none';
+    playing.style.display = 'flex';
+})
+
 const options = [
     {
         picture: "./images/rock.png",
@@ -30,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const selectedButton = btn.dataset.btn;
-
+            btns.forEach(btn => btn.disabled = true);
             playerPicElem.innerHTML = "<img src='./images/rock.png'/>";
             aiPicElem.innerHTML = "<img src='./images/rock.png'/>";
 
@@ -87,28 +96,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById('playerScore').textContent = playerCountElem.textContent;
                 document.getElementById('computerScore').textContent = computerCountElem.textContent;
 
-                if (playerCountElem.textContent == 5) {
-                    document.getElementById('message').textContent = "Player have won the game!";
-                    if (playerCountElem.textContent == 5 || computerCountElem.textContent == 5) {
-                        let playAgain = confirm("Do you want to play again?");
-                        if (playAgain) {
-                            location.reload();
-                        } else {
-                            document.getElementById('message').textContent = "Thanks for playing!!";
+                setTimeout(() => {
+                    if (playerCountElem.textContent == 5) {
+                        document.getElementById('message').textContent = "Player have just won the game!";
+                        if (playerCountElem.textContent == 5 || computerCountElem.textContent == 5) {
+                            let playAgain = confirm("Do you want to play again?");
+                            if (playAgain) {
+                                document.getElementById('playerScore').textContent = 0;
+                                document.getElementById('computerScore').textContent = 0;
+                            } else {
+                                document.getElementById('message').textContent = "Thanks for playing!!";
+                                setTimeout(() => {
+                                    playing.style.display = 'none';
+                                    asking.style.display = 'flex';
+                                }, 2000);
+                            }
                         }
-                    }
 
-                } else if (computerCountElem.textContent == 5) {
-                    document.getElementById('message').textContent = "Computer have won the game!";
-                    if (playerCountElem.textContent == 5 || computerCountElem.textContent == 5) {
-                        let playAgain = confirm("Do you want to play again?");
-                        if (playAgain) {
-                            location.reload();
-                        } else {
-                            document.getElementById('message').textContent = "Thanks for playing!!";
+                    } else if (computerCountElem.textContent == 5) {
+                        document.getElementById('message').textContent = "Computer have just won the game!";
+                        if (playerCountElem.textContent == 5 || computerCountElem.textContent == 5) {
+                            let playAgain = confirm("Do you want to play again?");
+                            if (playAgain) {
+                                document.getElementById('playerScore').textContent = 0;
+                                document.getElementById('computerScore').textContent = 0;
+                            } else {
+                                document.getElementById('message').textContent = "Thanks for playing!!";
+                                setTimeout(() => {
+                                    playing.style.display = 'none';
+                                    asking.style.display = 'flex';
+                                }, 2000);
+                            }
                         }
                     }
-                }
+                }, 1000);
+                btns.forEach(btn => btn.disabled = false);
             }, 2000);
         });
     });

@@ -25,6 +25,52 @@ main {
     padding: 2rem 20rem;
 }
 
+main.close {
+    display: none;
+}
+
+.asking {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.asking h1 {
+    font-size: 2.5rem;
+}
+
+.asking button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 15px;
+}
+
+.asking button:hover {
+    background: white;
+    color: #2E2947;
+}
+
+.asking.close {
+    display: none;
+}
+
 .top {
     width: 100%;
 
@@ -96,6 +142,11 @@ main {
     border: 1px solid white;
     font-size: 1.2rem;
     color: white;
+}
+
+.button button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 @keyframes playerShake {
