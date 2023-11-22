@@ -44,6 +44,8 @@ main.close {
     right: 0;
     bottom: 0;
     margin: auto;
+
+    background: url('../images/ai.png') no-repeat center center/contain;
 }
 
 .asking h1 {
